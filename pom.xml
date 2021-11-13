@@ -23,6 +23,7 @@
         <module>rigger-service</module>
         <module>rigger-task</module>
         <module>rigger-web</module>
+        <module>rigger-utils</module>
     </modules>
 
 
