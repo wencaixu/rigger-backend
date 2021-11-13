@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>com.qingmu</groupId>
-        <artifactId>rigger</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>${groupId}</groupId>
+        <artifactId>${rootArtifactId}</artifactId>
+        <version>${version}</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
-    <artifactId>rigger-task</artifactId>
+    <artifactId>${artifactId}</artifactId>
     <modelVersion>4.0.0</modelVersion>
-    <version>${project.version}</version>
-    <name>rigger-task</name>
-    <description>rigger-task</description>
+    <version>${version}</version>
+    <name>${artifactId}</name>
+    <description>${artifactId}</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.qingmu</groupId>
-            <artifactId>rigger-service</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <groupId>${groupId}</groupId>
+            <artifactId>${rootArtifactId}-service</artifactId>
+            <version>${version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

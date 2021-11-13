@@ -1,19 +1,48 @@
 # Getting Started
 
 ### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.6/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.6/maven-plugin/reference/html/#build-image)
-* [Spring Configuration Processor](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#configuration-metadata-annotation-processor)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#boot-features-developing-web-applications)
-* [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#using-boot-devtools)
+* 原始项目执行，archetype目录
+```java
+mvn archetype:create-from-project
+```
+* maven命令行配置
+```xml
+ <profile>
+	  <id>archetype</id>
+	  <repositories>
+	    <repository>
+	      <id>archetype</id><!-- id expected by maven-archetype-plugin to avoid fetching from everywhere -->
+	      <url>**http://192.168.31.242:8081/repository/maven-releases**/</url> /**本地私服**/
+	      <releases>
+	        <enabled>true</enabled>
+	        <checksumPolicy>fail</checksumPolicy>
+	      </releases>
+	      <snapshots>
+	        <enabled>true</enabled>
+	        <checksumPolicy>warn</checksumPolicy>
+	      </snapshots>
+	    </repository>
+	  </repositories>
+	</profile>
+  </profiles>
 
-### Guides
-The following guides illustrate how to use some features concretely:
+<activeProfiles>
+  <activeProfile>archetype</activeProfile>
+</activeProfiles>
+```
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+执行
+
+```shell
+mvn archetype:generate     /
+-DarchetypeGroupId=com.qingmu    / 
+-DarchetypeArtifactId=rigger     /
+-DarchetypeVersion=0.0.1    /
+-DgroupId=com.qingmu    / 
+-DartifactId=rigger   /  
+-Dversion=1.0.0 /
+-DarchetypeCatalog=local
+
+```
 
