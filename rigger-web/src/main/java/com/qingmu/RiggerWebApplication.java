@@ -1,4 +1,4 @@
-package com.qingmu.web;
+package com.qingmu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
