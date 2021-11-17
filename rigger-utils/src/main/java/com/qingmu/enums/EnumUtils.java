@@ -4,13 +4,6 @@ import org.springframework.util.Assert;
 
 public abstract class EnumUtils {
 
-    /**
-     * Parse the bounded value into ValuedEnum
-     *
-     * @param clz
-     * @param value
-     * @return
-     */
     public static <T extends ValuedEnum<V>, V> T parse(Class<T> clz, V value) {
         Assert.notNull(clz, "clz can not be null");
         if (value == null) {
@@ -25,14 +18,6 @@ public abstract class EnumUtils {
         return null;
     }
 
-    /**
-     * Null-safe valueOf function
-     *
-     * @param <T>
-     * @param enumType
-     * @param name
-     * @return
-     */
     public static <T extends Enum<T>> T valueOf(Class<T> enumType, String name) {
         if (name == null) {
             return null;
